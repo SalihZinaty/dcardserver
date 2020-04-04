@@ -3,11 +3,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex');
+import Cards from './Cards'
 app.use(bodyParser.json());
 app.use(cors());
 
 var fs = require('fs');
-var path  = 'E:\\Projects\\dcard\\src\\componets\\cardland\\card\\cards';
+var path  = '\Cards';
 var relpath =  '../../../Cards';
 const cLink = fs.readdirSync(path);
 const data = {
@@ -16,7 +17,7 @@ const data = {
 }
 
 app.get('/deck', (req,res) => {
-    res.json(data);
+    res.Cards
 })
 
 app.post('/arenabalance' , (req,res) => {
